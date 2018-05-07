@@ -286,6 +286,15 @@ module TictactoeGto
       return players
     end
 
+    def set_player1(players)
+      case @last_player
+      when players[0].id
+        return players.reverse!
+      when players[1].id
+        return players
+      end
+    end
+
     private :check_col, :check_row, :check_diagonal, :gameover_message, :get_position
   end
 
@@ -309,8 +318,8 @@ module TictactoeGto
           break unless game.play_again?
           board_size = Board.get_size
           board = Board.new(board_size)
-          players = [Player.new('X'), Player.new('O')]
-          players = game.customize_id(players)
+          players = game.set_player1 players
+          players = game.customize_id players
           board.fill
           board.display
         end
