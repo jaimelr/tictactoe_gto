@@ -26,11 +26,15 @@ Open your IRB console with:
 
     $ irb
 
-The start the game with the following command:
+Then load the gem into IRB with;
 
-    > Tictactoe.start
+    > require 'tictactoe_gto'
 
-And let the fun begin! (So to say).
+And finally start the game with the following command:
+
+    > TicTactoeGto::Tictactoe.start
+
+Let the fun begin! (So to say).
 
 ## Development
 
